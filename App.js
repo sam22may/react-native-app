@@ -5,10 +5,14 @@ import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { Button } from '@rneui/base'
 import { global } from './styles/global'
 import { Icon } from '@rneui/themed'
+import { useState } from 'react'
+import TaskList from './components/TaskList/TaskList'
 
 export default function App (){
+	const [ myText, setMyText ] = useState('Hello World')
+
 	const btnPress = () => {
-		console.log('Button pressed')
+		setMyText('La paprika des poupoules')
 	}
 
 	return (
@@ -16,12 +20,12 @@ export default function App (){
 			<View>
 				<Header title='Liste de tâches!!! magique yoolloo' />
 
-				{/* <Button title='Press me cause button' onPress={btnPress} /> */}
-				<Button style={global.m12} color='grey0'>
+				<Button style={global.m12} color='grey0' onPress={btnPress}>
 					Salut
 					<Icon name='forward' color='white' />
 				</Button>
-				<Icon name='rowing' />
+				<Text>{myText}</Text>
+				<TaskList />
 			</View>
 		</SafeAreaProvider>
 	)
