@@ -4,5 +4,11 @@ import { StyleSheet } from 'react-native'
 export const global = StyleSheet.create({
 	m12: {
 		margin: 12
+	},
+	mt10: {
+		marginTop: 10
+	},
+	action: {
+		marginTop: 100
 	}
 })

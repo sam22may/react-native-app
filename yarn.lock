@@ -1652,6 +1652,16 @@
     sudo-prompt "^9.0.0"
     wcwidth "^1.0.1"
 
+"@react-native-picker/picker@2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@react-native-picker/picker/-/picker-2.4.0.tgz#7ca2e01a3bdf854ee01ca752762ffa73c0e83313"
+  integrity sha512-duGZc3a8Qa21YPrA4U3oR9NAUzBA66FTjubGK2CodA6rNjiwN+xC32hOZ5unkf4qD3DqLWeoPjg3fYf54bVMjA==
+
+"@react-native-picker/picker@^1.8.3":
+  version "1.16.8"
+  resolved "https://registry.yarnpkg.com/@react-native-picker/picker/-/picker-1.16.8.tgz#2126ca54d4a5a3e9ea5e3f39ad1e6643f8e4b3d4"
+  integrity sha512-pacdQDX6V6EmjF+HoiIh6u++qx4mTK0WnhgUHRc01B+Qt5eoeUwseBqmqfTSXTx/aHDEd6PiIw7UGvKgFoqgFQ==
+
 "@react-native/assets@1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@react-native/assets/-/assets-1.0.0.tgz#c6f9bf63d274bafc8e970628de24986b30a55c8e"
@@ -4453,6 +4463,11 @@ lodash.isempty@^4.4.0:
   resolved "https://registry.yarnpkg.com/lodash.isempty/-/lodash.isempty-4.4.0.tgz#6f86cbedd8be4ec987be9aaf33c9684db1b31e7e"
   integrity sha512-oKMuF3xEeqDltrGMfDxAPGIVMSSRv8tbRSODbrs4KGsRRLEhrW8N8Rd4DRgB2+621hY8A8XwwrTVhXWpxFvMzg==
 
+lodash.isequal@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
+  integrity sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==
+
 lodash.throttle@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
@@ -4463,7 +4478,7 @@ lodash.times@^4.3.2:
   resolved "https://registry.yarnpkg.com/lodash.times/-/lodash.times-4.3.2.tgz#3e1f2565c431754d54ab57f2ed1741939285ca1d"
   integrity sha512-FfaJzl0SA35CRPDh5SWe2BTght6y5KSK7yJv166qIp/8q7qOwBDCvuDZE2RUSMRpBkLF6rZKbLEUoTmaP3qg6A==
 
-lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.4, lodash@^4.3.0:
+lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.21, lodash@^4.17.4, lodash@^4.3.0:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -5689,6 +5704,14 @@ react-native-modal@2.5.0:
     prop-types "15.5.10"
     react-native-animatable "^1.2.3"
 
+react-native-picker-select@^8.0.4:
+  version "8.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-picker-select/-/react-native-picker-select-8.0.4.tgz#3f7f1f42df69b06e7d2c10338288332a6c40fd10"
+  integrity sha512-orBjPIwBkV5oipyVw263YNMI56f6Kj3p/ejabZoCYYNSG3AiLVVhC2RqsxMgDA7IayyURAW+AlV+mDJyVqLBkg==
+  dependencies:
+    "@react-native-picker/picker" "^1.8.3"
+    lodash.isequal "^4.5.0"
+
 react-native-prompt@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-native-prompt/-/react-native-prompt-1.0.0.tgz#41e0ec2aa7dd8f12f3a3ee83af9d63c4b670f8a1"
@@ -6045,6 +6068,11 @@ rimraf@~2.6.2:
   integrity sha512-mwqeW5XsA2qAejG46gYdENaxXjx9onRNCfn7L0duuP4hCuTIi/QO7PDK07KJfp1d+izWPrzEJDcSqBa0OZQriA==
   dependencies:
     glob "^7.1.3"
+
+rn-prompt@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/rn-prompt/-/rn-prompt-1.0.4.tgz#dd113af35a520f24c2b14095a4bd2c5836d0921e"
+  integrity sha512-SVfhiPmg8hDVqWGTIXskAKNfWTrKIqDpDMQgizNKYQn8BC8lmRHHsZLJJXIsOJ6Xg5KPt3vKvSgSZtsawd/D8g==
 
 run-async@^2.2.0:
   version "2.4.1"

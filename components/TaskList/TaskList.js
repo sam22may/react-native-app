@@ -1,33 +1,43 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 //import { ListItem, List } from "react-native-elements";
 import { ListItem } from '@rneui/base'
 import { View } from 'react-native'
-import { Icon } from '@rneui/themed'
+import { Icon, Badge } from '@rneui/themed'
+import { TASK } from '../../constants/enums'
 
-const TaskList = () => {
-	const list = [
-		{
-			title: 'Appointments',
-			icon: 'av-timer'
-		},
-		{
-			title: 'Trips',
-			icon: 'flight-takeoff'
-		}
-	]
-
+const TaskList = (props) => {
 	return (
-		<View>
-			{list.map((item, i) => (
-				<ListItem key={i} bottomDivider>
-					<Icon name={item.icon} />
+		<Fragment>
+			{props.list.map((item) => (
+				<ListItem
+					key={item.id}
+					bottomDivider
+					onPress={() => {
+						props.onPressCallback(item)
+					}}
+					onLongPress={() => {
+						props.onLongPressCallback(item)
+					}}>
+					<Icon name={item.icon} type='antdesign' />
 					<ListItem.Content>
 						<ListItem.Title>{item.title}</ListItem.Title>
 					</ListItem.Content>
+					<Badge
+						value={item.status}
+						status={
+							item.status === TASK.todoStatus ? (
+								'error'
+							) : item.status === TASK.inProgressStatus ? (
+								'warning'
+							) : (
+								'success'
+							)
+						}
+					/>
 					<ListItem.Chevron />
 				</ListItem>
 			))}
-		</View>
+		</Fragment>
 	)
 }
 

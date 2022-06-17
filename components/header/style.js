@@ -8,13 +8,14 @@ export const styles = StyleSheet.create({
 	},
 	header: {
 		backgroundColor: APP_COLORS.secondary,
-		height: 160,
+		height: 120,
 		justifyContent: 'center',
 		alignItems: 'center',
 		shadowColor: APP_COLORS.dark,
 		shadowOpacity: 0.3,
 		shadowOffset: { width: 0, height: 6 },
-		shadowRadius: 6
+		shadowRadius: 6,
+		marginBottom: 15
 	},
 	text: {
 		color: APP_COLORS.text,
