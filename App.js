@@ -1,4 +1,5 @@
-import { View, ScrollView, Text } from 'react-native'
+import { View, ScrollView } from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import Header from './components/header'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { Button } from '@rneui/base'
@@ -12,19 +13,30 @@ import TaskModal from './components/TaskModal/TaskModal'
 import lodash from 'lodash'
 import AddTaskPrompt from './components/Prompt/AddTaskPrompt'
 
+const StorageKey = 'taskslist'
+
 export default function App (){
 	const [ modalIsVisible, setModalIsVisible ] = useState(false)
 	const [ promptIsVisible, setPromptIsVisible ] = useState(false)
 	const [ renamePromptIsVisible, setRenamePromptIsVisible ] = useState(false)
 	const [ currentTask, setCurrentTask ] = useState({})
-	const [ list, setList ] = useState(taskArray)
+	const [ list, setList ] = useState([])
 	const [ idGenerator, setIdGenerator ] = useState(8)
+
+	useEffect(() => {
+		AsyncStorage.getItem(StorageKey).then((value) => {
+			if (value) {
+				setList(JSON.parse(value))
+				setIdGenerator(JSON.parse(value).length)
+			}
+		})
+	}, [])
 
 	useEffect(
 		() => {
-			setList(taskArray)
+			AsyncStorage.setItem(StorageKey, JSON.stringify(list))
 		},
-		[ taskArray ]
+		[ list ]
 	)
 
 	const taskArray = [
@@ -123,6 +135,10 @@ export default function App (){
 		setList(newList)
 		setCurrentTask({})
 		setRenamePromptIsVisible((prevState) => !prevState)
+	}
+
+	const saveTaskList = async () => {
+		await AsyncStorage.setItem(StorageKey, JSON.stringify(list))
 	}
 
 	return (

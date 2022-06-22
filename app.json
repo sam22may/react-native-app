@@ -1,0 +1,15 @@
+{
+	"expo": {
+		"name": "tasklistapp",
+		"icon": "/tasklist.png",
+		"version": "1.0.0",
+		"slug": "tasklistapp",
+		"sdkVersion": "37.0.0",
+		"ios": {
+			"bundleIdentifier": "com.expo.tasklistapp"
+		},
+		"android": {
+			"package": "com.expo.tasklistapp"
+		}
+	}
+}
